@@ -1,0 +1,87 @@
+<html xmlns:o='urn:schemas-microsoft-com:office:office'
+      xmlns:w='urn:schemas-microsoft-com:office:word'
+      xmlns='http://www.w3.org/TR/REC-html40'>
+<head>
+<meta charset="utf-8">
+<title>Phase 3: Project Design Phase</title>
+<!--[if gte mso 9]>
+<xml>
+<w:WordDocument>
+<w:View>Print</w:View>
+<w:Zoom>100</w:Zoom>
+<w:DoNotOptimizeForBrowser/>
+</w:WordDocument>
+</xml>
+<![endif]-->
+<style>
+@page Section1 { size: 8.5in 11.0in; margin: 1.0in 1.0in 1.0in 1.0in; }
+div.Section1 { page: Section1; }
+body { font-family: 'Calibri', 'Arial', sans-serif; font-size: 11pt; line-height: 1.5; color: #2d3748; }
+h1 { font-size: 20pt; color: #1a365d; font-weight: bold; margin-bottom: 6pt; }
+h2 { font-size: 15pt; color: #2b6cb0; font-weight: bold; margin-top: 14pt; margin-bottom: 4pt; border-bottom: 1pt solid #cbd5e0; padding-bottom: 3pt; }
+h3 { font-size: 12pt; color: #2d3748; font-weight: bold; margin-top: 10pt; margin-bottom: 2pt; }
+p { margin-bottom: 6pt; }
+table { border-collapse: collapse; width: 100%; margin: 8pt 0; }
+table, th, td { border: 1pt solid #cbd5e0; }
+th { background-color: #ebf8ff; color: #2b6cb0; font-weight: bold; padding: 6pt 8pt; text-align: left; }
+td { padding: 5pt 8pt; }
+</style>
+</head>
+<body>
+<div class="Section1">
+<h1>Phase 3: Project Design Phase</h1>
+<p style="font-size: 13pt; color: #4a5568;"><strong>ContentGen (BlogNest) System Architecture &amp; Schemas</strong></p>
+
+<h2>1. Layered Architecture Model (Epic 1)</h2>
+<ol>
+  <li><strong>Interface:</strong> Postman, Thunder Client, and web clients.</li>
+  <li><strong>Express Server Gateway:</strong> Port 5000 monitor, CORS, body parsers, rate limiters.</li>
+  <li><strong>Authentication &amp; Role Matrix Middleware:</strong> JWT verification, RBAC guards, and express-validator.</li>
+  <li><strong>Granular Services Layer:</strong> Blog lifecycle manager, comment queue, media registry, system reports.</li>
+  <li><strong>Database Interface Layer:</strong> Mongoose ODM with compound text indexing and schema assertions.</li>
+  <li><strong>AI Flow Layer:</strong> GeminiService client connecting to Google Gemini AI.</li>
+  <li><strong>BlogGenerator with AI:</strong> Automated blog content generation pipeline.</li>
+</ol>
+
+<h2>2. Entity-Relationship (ER) Schema Specifications</h2>
+<h3>1. User Entity</h3>
+<ul>
+  <li><code>_id</code>: Primary Key (ObjectId)</li>
+  <li><code>name</code>: String, Required</li>
+  <li><code>email</code>: String, Required, Unique</li>
+  <li><code>password</code>: String, Hashed with bcrypt, Required</li>
+  <li><code>role</code>: String enum (admin, editor, author, reader), Default: "reader"</li>
+  <li><code>timestamps</code>: true</li>
+</ul>
+
+<h3>2. Post Entity</h3>
+<ul>
+  <li><code>_id</code>: Primary Key (ObjectId)</li>
+  <li><code>userID</code>: Foreign Key referencing User Collection</li>
+  <li><code>name</code>: String, Required (represents Title)</li>
+  <li><code>photo</code>: Object/String pathway link</li>
+  <li><code>message</code>: String, Core content body</li>
+  <li><code>likes</code>: Number, Default: 0</li>
+  <li><code>status</code>: String enum (draft, pending, scheduled, published)</li>
+  <li><code>timestamps</code>: true</li>
+</ul>
+
+<h3>3. Comment Entity</h3>
+<ul>
+  <li><code>_id</code>: Primary Key (ObjectId)</li>
+  <li><code>postID</code>: Foreign Key referencing Post Collection</li>
+  <li><code>userID</code>: Foreign Key referencing User Collection</li>
+  <li><code>content</code>: String, Required</li>
+  <li><code>status</code>: String enum (approved, pending, spam), Default: "approved"</li>
+  <li><code>timestamps</code>: true</li>
+</ul>
+
+<h2>3. Key Structural Mappings</h2>
+<ul>
+  <li><strong>User to Post (One-to-Many):</strong> An author can submit multiple blog documents.</li>
+  <li><strong>User to Comment (One-to-Many):</strong> Readers/Users can append multiple response comments.</li>
+  <li><strong>Post to Comment (One-to-Many):</strong> A single blog document stores individual referenced comments.</li>
+</ul>
+</div>
+</body>
+</html>

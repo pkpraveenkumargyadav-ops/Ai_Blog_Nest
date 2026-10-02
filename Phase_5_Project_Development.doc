@@ -1,0 +1,68 @@
+<html xmlns:o='urn:schemas-microsoft-com:office:office'
+      xmlns:w='urn:schemas-microsoft-com:office:word'
+      xmlns='http://www.w3.org/TR/REC-html40'>
+<head>
+<meta charset="utf-8">
+<title>Phase 5: Project Development Phase</title>
+<!--[if gte mso 9]>
+<xml>
+<w:WordDocument>
+<w:View>Print</w:View>
+<w:Zoom>100</w:Zoom>
+<w:DoNotOptimizeForBrowser/>
+</w:WordDocument>
+</xml>
+<![endif]-->
+<style>
+@page Section1 { size: 8.5in 11.0in; margin: 1.0in 1.0in 1.0in 1.0in; }
+div.Section1 { page: Section1; }
+body { font-family: 'Calibri', 'Arial', sans-serif; font-size: 11pt; line-height: 1.5; color: #2d3748; }
+h1 { font-size: 20pt; color: #1a365d; font-weight: bold; margin-bottom: 6pt; }
+h2 { font-size: 15pt; color: #2b6cb0; font-weight: bold; margin-top: 14pt; margin-bottom: 4pt; border-bottom: 1pt solid #cbd5e0; padding-bottom: 3pt; }
+h3 { font-size: 12pt; color: #2d3748; font-weight: bold; margin-top: 10pt; margin-bottom: 2pt; }
+p { margin-bottom: 6pt; }
+pre { font-family: 'Consolas', monospace; font-size: 9.5pt; background-color: #2d3748; color: #f7fafc; padding: 8pt; margin: 6pt 0; }
+</style>
+</head>
+<body>
+<div class="Section1">
+<h1>Phase 5: Project Development Phase</h1>
+<p style="font-size: 13pt; color: #4a5568;"><strong>ContentGen (BlogNest) Codebase &amp; Architecture</strong></p>
+
+<h2>1. Project Setup (Epic 2)</h2>
+<p>Developed under folder <code>Server/</code>:</p>
+<pre><code>Server/
+├── package.json
+├── .env
+├── server.js
+├── app.js
+├── seeder.js
+├── config/db.js
+├── models/ (userModel, postModel, commentModel, categoryModel, mediaModel)
+├── middlewares/ (authMiddleware, errorMiddleware, validationMiddleware)
+├── services/geminiService.js
+├── controllers/ (auth, post, comment, category, media, ai, user)
+└── routes/ (auth, post, comment, category, media, ai, user)</code></pre>
+
+<h2>2. Backend Development (Epic 3)</h2>
+<ul>
+  <li><strong>server.js:</strong> Process signal handling, uncaught exceptions, and port listener on Port 5000.</li>
+  <li><strong>app.js:</strong> Express middleware pipeline (Helmet, CORS, Morgan, express.json, rate limiting, centralized error handling).</li>
+</ul>
+
+<h2>3. Database Configuration (Epic 4)</h2>
+<ul>
+  <li><strong>config/db.js:</strong> Mongoose connection with event listeners and automatic reconnection hooks.</li>
+  <li><strong>userModel.js:</strong> Pre-save bcrypt hashing (10 salt rounds) and JWT token generation method.</li>
+  <li><strong>postModel.js:</strong> Schema with title (name), content body (message), photo, likes, views, status, and compound text search index.</li>
+  <li><strong>commentModel.js:</strong> Post and user references with moderation flags (approved, pending, spam).</li>
+</ul>
+
+<h2>4. Google Gemini AI Flow Integration</h2>
+<ul>
+  <li><code>services/geminiService.js</code> connects to Google Gemini 1.5 Flash using <code>@google/generative-ai</code>.</li>
+  <li>Supports blog generation, summarization, FAQs, WeatherWise insights, and FitTrack recommendations.</li>
+</ul>
+</div>
+</body>
+</html>

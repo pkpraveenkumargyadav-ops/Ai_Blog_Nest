@@ -1,0 +1,93 @@
+<html xmlns:o='urn:schemas-microsoft-com:office:office'
+      xmlns:w='urn:schemas-microsoft-com:office:word'
+      xmlns='http://www.w3.org/TR/REC-html40'>
+<head>
+<meta charset="utf-8">
+<title>Phase 4: Project Planning Phase</title>
+<!--[if gte mso 9]>
+<xml>
+<w:WordDocument>
+<w:View>Print</w:View>
+<w:Zoom>100</w:Zoom>
+<w:DoNotOptimizeForBrowser/>
+</w:WordDocument>
+</xml>
+<![endif]-->
+<style>
+@page Section1 { size: 8.5in 11.0in; margin: 1.0in 1.0in 1.0in 1.0in; }
+div.Section1 { page: Section1; }
+body { font-family: 'Calibri', 'Arial', sans-serif; font-size: 11pt; line-height: 1.5; color: #2d3748; }
+h1 { font-size: 20pt; color: #1a365d; font-weight: bold; margin-bottom: 6pt; }
+h2 { font-size: 15pt; color: #2b6cb0; font-weight: bold; margin-top: 14pt; margin-bottom: 4pt; border-bottom: 1pt solid #cbd5e0; padding-bottom: 3pt; }
+h3 { font-size: 12pt; color: #2d3748; font-weight: bold; margin-top: 10pt; margin-bottom: 2pt; }
+p { margin-bottom: 6pt; }
+table { border-collapse: collapse; width: 100%; margin: 8pt 0; }
+table, th, td { border: 1pt solid #cbd5e0; }
+th { background-color: #ebf8ff; color: #2b6cb0; font-weight: bold; padding: 6pt 8pt; text-align: left; }
+td { padding: 5pt 8pt; }
+</style>
+</head>
+<body>
+<div class="Section1">
+<h1>Phase 4: Project Planning Phase</h1>
+<p style="font-size: 13pt; color: #4a5568;"><strong>ContentGen (BlogNest) Milestones &amp; Risk Mitigation</strong></p>
+
+<h2>1. Work Breakdown Structure (WBS) &amp; Epics</h2>
+<table>
+  <thead>
+    <tr>
+      <th>Milestone</th>
+      <th>Epic Ref</th>
+      <th>Deliverables</th>
+      <th>Status</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Milestone 1</td>
+      <td>Epic 2</td>
+      <td>Project Setup, Server folder, npm init, dependencies</td>
+      <td>Completed</td>
+    </tr>
+    <tr>
+      <td>Milestone 2</td>
+      <td>Epic 4</td>
+      <td>MongoDB connection, User/Post/Comment schemas</td>
+      <td>Completed</td>
+    </tr>
+    <tr>
+      <td>Milestone 3</td>
+      <td>Epic 1</td>
+      <td>JWT auth, Role Matrix middleware, validation, error handler</td>
+      <td>Completed</td>
+    </tr>
+    <tr>
+      <td>Milestone 4</td>
+      <td>Epic 3</td>
+      <td>server.js, app.js, domain controllers, route files</td>
+      <td>Completed</td>
+    </tr>
+    <tr>
+      <td>Milestone 5</td>
+      <td>Epic 1 &amp; 3</td>
+      <td>Gemini AI flow, blog synthesis, summarization</td>
+      <td>Completed</td>
+    </tr>
+    <tr>
+      <td>Milestone 6</td>
+      <td>Epic 5</td>
+      <td>Database seeder, Postman collection, execution testing</td>
+      <td>Completed</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2>2. Risk Management &amp; Contingencies</h2>
+<ul>
+  <li><strong>Gemini API Quota Limits:</strong> Built-in heuristic fallback in geminiService ensures zero service disruption.</li>
+  <li><strong>Unauthorized Privilege Escalation:</strong> Strict authorize(...roles) middleware asserts role from database.</li>
+  <li><strong>DDoS &amp; Brute-Force:</strong> Dual rate limiters protect global endpoints (300/15m) and AI endpoints (50/10m).</li>
+</ul>
+</div>
+</body>
+</html>

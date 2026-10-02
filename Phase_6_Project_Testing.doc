@@ -1,0 +1,104 @@
+<html xmlns:o='urn:schemas-microsoft-com:office:office'
+      xmlns:w='urn:schemas-microsoft-com:office:word'
+      xmlns='http://www.w3.org/TR/REC-html40'>
+<head>
+<meta charset="utf-8">
+<title>Phase 6: Project Testing Phase</title>
+<!--[if gte mso 9]>
+<xml>
+<w:WordDocument>
+<w:View>Print</w:View>
+<w:Zoom>100</w:Zoom>
+<w:DoNotOptimizeForBrowser/>
+</w:WordDocument>
+</xml>
+<![endif]-->
+<style>
+@page Section1 { size: 8.5in 11.0in; margin: 1.0in 1.0in 1.0in 1.0in; }
+div.Section1 { page: Section1; }
+body { font-family: 'Calibri', 'Arial', sans-serif; font-size: 11pt; line-height: 1.5; color: #2d3748; }
+h1 { font-size: 20pt; color: #1a365d; font-weight: bold; margin-bottom: 6pt; }
+h2 { font-size: 15pt; color: #2b6cb0; font-weight: bold; margin-top: 14pt; margin-bottom: 4pt; border-bottom: 1pt solid #cbd5e0; padding-bottom: 3pt; }
+h3 { font-size: 12pt; color: #2d3748; font-weight: bold; margin-top: 10pt; margin-bottom: 2pt; }
+p { margin-bottom: 6pt; }
+table { border-collapse: collapse; width: 100%; margin: 8pt 0; }
+table, th, td { border: 1pt solid #cbd5e0; }
+th { background-color: #ebf8ff; color: #2b6cb0; font-weight: bold; padding: 6pt 8pt; text-align: left; }
+td { padding: 5pt 8pt; }
+</style>
+</head>
+<body>
+<div class="Section1">
+<h1>Phase 6: Project Testing Phase</h1>
+<p style="font-size: 13pt; color: #4a5568;"><strong>ContentGen (BlogNest) API Testing Protocol (Epic 5)</strong></p>
+
+<h2>1. Execution Verification</h2>
+<p>Tested using Postman and Thunder Client across all required endpoint vectors:</p>
+<table>
+  <thead>
+    <tr>
+      <th>Action</th>
+      <th>Endpoint</th>
+      <th>Method</th>
+      <th>Expected Status</th>
+      <th>Result</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>User Registration</td>
+      <td>/api/auth/register</td>
+      <td>POST</td>
+      <td>201 Created</td>
+      <td>Pass</td>
+    </tr>
+    <tr>
+      <td>User Login</td>
+      <td>/api/auth/login</td>
+      <td>POST</td>
+      <td>200 OK</td>
+      <td>Pass</td>
+    </tr>
+    <tr>
+      <td>Create Blogs</td>
+      <td>/api/posts</td>
+      <td>POST</td>
+      <td>201 Created</td>
+      <td>Pass</td>
+    </tr>
+    <tr>
+      <td>Fetch Blogs</td>
+      <td>/api/posts</td>
+      <td>GET</td>
+      <td>200 OK</td>
+      <td>Pass</td>
+    </tr>
+    <tr>
+      <td>Generate AI Blogs</td>
+      <td>/api/ai/generate-blog</td>
+      <td>POST</td>
+      <td>200 OK</td>
+      <td>Pass</td>
+    </tr>
+    <tr>
+      <td>Summarize Blogs</td>
+      <td>/api/ai/summarize</td>
+      <td>POST</td>
+      <td>200 OK</td>
+      <td>Pass</td>
+    </tr>
+    <tr>
+      <td>Comment Moderation</td>
+      <td>/api/comments/:id/moderate</td>
+      <td>PATCH</td>
+      <td>200 OK</td>
+      <td>Pass</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2>2. Postman Collection Verification</h2>
+<p>The collection <code>ContentGen.postman_collection.json</code> automates token extraction via post-response scripts and asserts HTTP 200/201 status codes.</p>
+</div>
+</body>
+</html>

@@ -1,0 +1,94 @@
+<html xmlns:o='urn:schemas-microsoft-com:office:office'
+      xmlns:w='urn:schemas-microsoft-com:office:word'
+      xmlns='http://www.w3.org/TR/REC-html40'>
+<head>
+<meta charset="utf-8">
+<title>Phase 2: Requirement Analysis Phase</title>
+<!--[if gte mso 9]>
+<xml>
+<w:WordDocument>
+<w:View>Print</w:View>
+<w:Zoom>100</w:Zoom>
+<w:DoNotOptimizeForBrowser/>
+</w:WordDocument>
+</xml>
+<![endif]-->
+<style>
+@page Section1 { size: 8.5in 11.0in; margin: 1.0in 1.0in 1.0in 1.0in; }
+div.Section1 { page: Section1; }
+body { font-family: 'Calibri', 'Arial', sans-serif; font-size: 11pt; line-height: 1.5; color: #2d3748; }
+h1 { font-size: 20pt; color: #1a365d; font-weight: bold; margin-bottom: 6pt; }
+h2 { font-size: 15pt; color: #2b6cb0; font-weight: bold; margin-top: 14pt; margin-bottom: 4pt; border-bottom: 1pt solid #cbd5e0; padding-bottom: 3pt; }
+h3 { font-size: 12pt; color: #2d3748; font-weight: bold; margin-top: 10pt; margin-bottom: 2pt; }
+p { margin-bottom: 6pt; }
+table { border-collapse: collapse; width: 100%; margin: 8pt 0; }
+table, th, td { border: 1pt solid #cbd5e0; }
+th { background-color: #ebf8ff; color: #2b6cb0; font-weight: bold; padding: 6pt 8pt; text-align: left; }
+td { padding: 5pt 8pt; }
+</style>
+</head>
+<body>
+<div class="Section1">
+<h1>Phase 2: Requirement Analysis Phase</h1>
+<p style="font-size: 13pt; color: #4a5568;"><strong>ContentGen (BlogNest) System Requirements</strong></p>
+
+<h2>1. Hardware Requirements</h2>
+<table>
+  <thead>
+    <tr>
+      <th>Component</th>
+      <th>Specification</th>
+      <th>Operational Purpose</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>Processor</strong></td>
+      <td>Intel Core i5 (8th Gen or above) / AMD Ryzen 5</td>
+      <td>Asynchronous Express logic, bcrypt encryption</td>
+    </tr>
+    <tr>
+      <td><strong>RAM</strong></td>
+      <td>8 GB minimum (16 GB recommended)</td>
+      <td>Concurrent MongoDB instance, Node runtime, tooling</td>
+    </tr>
+    <tr>
+      <td><strong>Storage</strong></td>
+      <td>1 GB available workspace</td>
+      <td>Node dependencies, MongoDB collections and logs</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2>2. Software Requirements</h2>
+<ul>
+  <li><strong>Operating System:</strong> Windows 10/11, macOS, Linux (cross-platform).</li>
+  <li><strong>Node.js:</strong> v16 or above (v18/v20 LTS recommended).</li>
+  <li><strong>npm:</strong> v8 or above.</li>
+  <li><strong>Express.js:</strong> Routing framework.</li>
+  <li><strong>MongoDB:</strong> Document NoSQL engine with Mongoose ODM (v8.9.5).</li>
+  <li><strong>Testing:</strong> Postman or Thunder Client extension.</li>
+</ul>
+
+<h2>3. User Roles &amp; Responsibilities</h2>
+<ul>
+  <li><strong>Admin:</strong> Complete environment override, user role management, account status toggling, system metrics.</li>
+  <li><strong>Editor:</strong> Reviews pending drafts, transitions statuses to published, curates categories, moderates comments.</li>
+  <li><strong>Author:</strong> Creates blog posts, uploads media pathways, organizes drafts, reviews personal analytics.</li>
+  <li><strong>Reader:</strong> Public consumer. Queries published posts, toggles likes, submits comments.</li>
+</ul>
+
+<h2>4. Functional Requirements (FRs)</h2>
+<ul>
+  <li><strong>FR-1:</strong> User authentication with JWT and bcrypt password hashing.</li>
+  <li><strong>FR-2:</strong> Blog lifecycle management (Draft, Pending Approval, Scheduled, Published).</li>
+  <li><strong>FR-3:</strong> Compound text search across title, message, category, and tags.</li>
+  <li><strong>FR-4:</strong> Automated blog synthesis via Google Gemini AI (/api/ai/generate-blog).</li>
+  <li><strong>FR-5:</strong> Real-time semantic compression abstract engine (/api/ai/summarize).</li>
+  <li><strong>FR-6:</strong> AI specialized helpers: FAQs, WeatherWise, FitTrack.</li>
+  <li><strong>FR-7:</strong> Comment moderation workflow (approved, pending, spam).</li>
+  <li><strong>FR-8:</strong> Media pathway asset registration.</li>
+</ul>
+</div>
+</body>
+</html>

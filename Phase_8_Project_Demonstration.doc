@@ -1,0 +1,53 @@
+<html xmlns:o='urn:schemas-microsoft-com:office:office'
+      xmlns:w='urn:schemas-microsoft-com:office:word'
+      xmlns='http://www.w3.org/TR/REC-html40'>
+<head>
+<meta charset="utf-8">
+<title>Phase 8: Project Demonstration Phase</title>
+<!--[if gte mso 9]>
+<xml>
+<w:WordDocument>
+<w:View>Print</w:View>
+<w:Zoom>100</w:Zoom>
+<w:DoNotOptimizeForBrowser/>
+</w:WordDocument>
+</xml>
+<![endif]-->
+<style>
+@page Section1 { size: 8.5in 11.0in; margin: 1.0in 1.0in 1.0in 1.0in; }
+div.Section1 { page: Section1; }
+body { font-family: 'Calibri', 'Arial', sans-serif; font-size: 11pt; line-height: 1.5; color: #2d3748; }
+h1 { font-size: 20pt; color: #1a365d; font-weight: bold; margin-bottom: 6pt; }
+h2 { font-size: 15pt; color: #2b6cb0; font-weight: bold; margin-top: 14pt; margin-bottom: 4pt; border-bottom: 1pt solid #cbd5e0; padding-bottom: 3pt; }
+h3 { font-size: 12pt; color: #2d3748; font-weight: bold; margin-top: 10pt; margin-bottom: 2pt; }
+p { margin-bottom: 6pt; }
+ol { margin-top: 0pt; margin-bottom: 8pt; padding-left: 20pt; }
+li { margin-bottom: 3pt; }
+.links-box { background-color: #f0fdf4; border: 1pt solid #bbf7d0; padding: 10pt; margin: 10pt 0; }
+</style>
+</head>
+<body>
+<div class="Section1">
+<h1>Phase 8: Project Demonstration Phase</h1>
+<p style="font-size: 13pt; color: #4a5568;"><strong>ContentGen (BlogNest) Demonstration Protocol &amp; Links</strong></p>
+
+<h2>1. Official Reference &amp; Media Links</h2>
+<div class="links-box">
+  <p>🎬 <strong>Demo Videos:</strong> <a href="https://drive.google.com/drive/folders/1npyGtRjLGZtjm6-03dbNGqCpstw_St_u?usp=sharing">Google Drive Demo Videos Folder</a></p>
+  <p>🧪 <strong>API Testing Video:</strong> <a href="https://drive.google.com/file/d/1mfPIZq0dpU1TAvZk6_Te9StsQXBBDaow/view?usp=drive_link">Google Drive API Testing Video</a></p>
+  <p>💻 <strong>Code Drive:</strong> <a href="https://drive.google.com/drive/folders/1S69VGxkcmkrsPhfJ6CE9af4Nf9WVnLsj?usp=sharing">Google Drive Source Code Folder</a></p>
+</div>
+
+<h2>2. Live Demonstration Persona Walkthrough</h2>
+<ol>
+  <li><strong>Health Check:</strong> <code>GET /api/health</code> asserts server operational state.</li>
+  <li><strong>Authentication:</strong> Author Priya logs in and receives stateless JWT token.</li>
+  <li><strong>AI Blog Generation:</strong> Priya invokes <code>POST /api/ai/generate-blog</code> with <code>saveAsDraft: true</code>.</li>
+  <li><strong>Editorial Publishing:</strong> Editor Elena reviews draft and executes <code>PATCH /api/posts/:id/status</code> to <code>published</code>.</li>
+  <li><strong>Reader Consumption:</strong> Reader Rohan searches articles, toggles like, and posts a comment.</li>
+  <li><strong>Comment Moderation:</strong> Editor Elena moderates comment flags to <code>approved</code> or <code>spam</code>.</li>
+  <li><strong>Analytics Governance:</strong> Priya reviews personal author metrics; Admin reviews system-wide totals.</li>
+</ol>
+</div>
+</body>
+</html>

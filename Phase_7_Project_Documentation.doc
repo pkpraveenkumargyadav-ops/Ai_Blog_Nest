@@ -1,0 +1,57 @@
+<html xmlns:o='urn:schemas-microsoft-com:office:office'
+      xmlns:w='urn:schemas-microsoft-com:office:word'
+      xmlns='http://www.w3.org/TR/REC-html40'>
+<head>
+<meta charset="utf-8">
+<title>Phase 7: Project Documentation Phase</title>
+<!--[if gte mso 9]>
+<xml>
+<w:WordDocument>
+<w:View>Print</w:View>
+<w:Zoom>100</w:Zoom>
+<w:DoNotOptimizeForBrowser/>
+</w:WordDocument>
+</xml>
+<![endif]-->
+<style>
+@page Section1 { size: 8.5in 11.0in; margin: 1.0in 1.0in 1.0in 1.0in; }
+div.Section1 { page: Section1; }
+body { font-family: 'Calibri', 'Arial', sans-serif; font-size: 11pt; line-height: 1.5; color: #2d3748; }
+h1 { font-size: 20pt; color: #1a365d; font-weight: bold; margin-bottom: 6pt; }
+h2 { font-size: 15pt; color: #2b6cb0; font-weight: bold; margin-top: 14pt; margin-bottom: 4pt; border-bottom: 1pt solid #cbd5e0; padding-bottom: 3pt; }
+h3 { font-size: 12pt; color: #2d3748; font-weight: bold; margin-top: 10pt; margin-bottom: 2pt; }
+p { margin-bottom: 6pt; }
+pre { font-family: 'Consolas', monospace; font-size: 9.5pt; background-color: #2d3748; color: #f7fafc; padding: 8pt; margin: 6pt 0; }
+</style>
+</head>
+<body>
+<div class="Section1">
+<h1>Phase 7: Project Documentation Phase</h1>
+<p style="font-size: 13pt; color: #4a5568;"><strong>ContentGen (BlogNest) Execution Manual</strong></p>
+
+<h2>1. Starting the Backend Server</h2>
+<pre><code># 1. Install dependencies
+npm install
+
+# 2. Seed initial demo data
+npm run seed
+
+# 3. Start development server
+npm run dev
+
+# 4. Start production server
+npm start</code></pre>
+
+<h2>2. Pre-Configured Demo Accounts</h2>
+<ul>
+  <li><strong>Admin:</strong> <code>admin@contentgen.com</code> &bull; Password: <code>admin123Password!</code></li>
+  <li><strong>Editor:</strong> <code>editor@contentgen.com</code> &bull; Password: <code>editor123Password!</code></li>
+  <li><strong>Author:</strong> <code>priya@contentgen.com</code> &bull; Password: <code>author123Password!</code></li>
+  <li><strong>Reader:</strong> <code>reader@contentgen.com</code> &bull; Password: <code>reader123Password!</code></li>
+</ul>
+
+<h2>3. Health Check Endpoint</h2>
+<p>Endpoint: <code>GET http://localhost:5000/api/health</code></p>
+</div>
+</body>
+</html>
